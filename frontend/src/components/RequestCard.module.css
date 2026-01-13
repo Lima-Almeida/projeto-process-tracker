@@ -1,0 +1,91 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+
+  width: 100%;
+  min-height: 96px;
+  min-width: 0;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.right {
+  flex-shrink: 0;
+  width: 120px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.id {
+  font-size: 13px;
+  color: #555;
+}
+
+.status {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.pending {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.processing {
+  background-color: #bbdefb;
+  color: #0d47a1;
+}
+
+.completed {
+  background-color: #c8e6c9;
+  color: #1b5e20;
+}
+
+.progressWrapper {
+  height: 8px;
+  background-color: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background-color: #1976d2;
+  transition: width 0.3s ease;
+}
+
+.log {
+  font-size: 14px;
+  color: #444;
+}
+
+.resultLabel {
+  font-size: 12px;
+  color: #777;
+}
+
+.resultValue {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
