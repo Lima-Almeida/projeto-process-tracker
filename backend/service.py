@@ -18,6 +18,8 @@ def run_process(request_id: str):
         for number in request.numbers:
             total += number
 
+        sleep(3)
+
         request.result = total
         request.progress = 100
         request.status = "completed"

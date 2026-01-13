@@ -10,8 +10,19 @@ from database import add_request, get_request, get_all_requests
 from models import Request
 from service import run_process
 import uuid
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/requests")
 def create_request(number_list: list[float], background_tasks: BackgroundTasks):
