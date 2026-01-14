@@ -1,12 +1,6 @@
 import styles from "./RequestCard.module.css";
+import type { Request } from "../types/Request";
 
-type RequestCardProps = {
-  id: string;
-  status: "pending" | "processing" | "completed";
-  progress: number;
-  logs: string[];
-  result: number | null;
-};
 
 export function RequestCard({
     id,
@@ -15,7 +9,7 @@ export function RequestCard({
     logs,
     result,
 
-}: RequestCardProps) {
+}: Request) {
     const lastLog = logs.length > 0 ? logs[logs.length - 1] : "";
 
   return (
