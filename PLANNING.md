@@ -1,4 +1,4 @@
-- Entendimento do problema:
+## Entendimento do problema:
 
 O objetivo do projeto é simular um cenário de acompanhamento de processos assíncronos, onde tarefas são processadas em segundo plano e o usuário pode acompanhar seu processo.
 
@@ -10,7 +10,7 @@ A ideia de utilização de um usuário é a seguinte:
 
 Nesse projeto, o processamento será um somador simples que utiliza esperas (sleep()) para simular o atraso das etapas.
 
-- Organização:
+## Organização:
 
 A aplicação, conforme sugerido/estipulado, será dividida em backend e frontend, da seguinte forma:
 

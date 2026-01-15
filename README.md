@@ -2,7 +2,7 @@
 
 Asynchronous process tracking system with FastAPI (backend) and React + TypeScript (frontend).
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before running the project, make sure you have installed:
 
@@ -10,7 +10,7 @@ Before running the project, make sure you have installed:
 - **Node.js 16+** and **npm** - [Download Node.js](https://nodejs.org/)
 - **pip** (usually comes with Python)
 
-## 🚀 How to run the project
+## How to run the project
 
 ### Option 1: Using the automatic script (Recommended)
 
@@ -82,13 +82,13 @@ npm run dev
 
 The frontend will be running at: **http://localhost:5173**
 
-## 🌐 Accessing the application
+## Accessing the application
 
 After starting both services, open your browser and go to:
 
 **http://localhost:5173**
 
-## 🛑 Stopping the application
+## Stopping the application
 
 ### If you used the script:
 Close the PowerShell windows that were automatically opened.
@@ -96,25 +96,7 @@ Close the PowerShell windows that were automatically opened.
 ### If you ran manually:
 Press `Ctrl + C` in each terminal where the services are running.
 
-## 📁 Project Structure
-
-```
-projeto-process-tracker/
-├── backend/          # FastAPI API
-│   ├── main.py      # API entry point
-│   ├── models.py    # Data models
-│   ├── database.py  # Data management
-│   └── service.py   # Processing logic
-├── frontend/         # React Application
-│   └── src/
-│       ├── App.tsx              # Main component
-│       ├── components/          # Reusable components
-│       ├── services/            # API services
-│       └── types/               # TypeScript definitions
-└── start.ps1         # Automatic startup script
-```
-
-## 🔧 Useful commands
+## Useful commands
 
 ### Backend
 ```powershell
