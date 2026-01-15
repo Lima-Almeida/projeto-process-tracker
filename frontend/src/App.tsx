@@ -2,15 +2,9 @@ import { useEffect, useState } from "react";
 import { RequestCard } from "./components/RequestCard";
 import { FloatingActionButton } from "./components/CircButton";
 import { AddRequestModal } from "./components/AddRequestModal";
+import type { Request } from "./types/Request";
+import { createRequest, getRequests } from "./services/api";
 import './App.css'
-
-type Request = {
-  id: string;
-  status: "pending" | "processing" | "completed";
-  progress: number;
-  logs: string[];
-  result: number | null;
-}
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,8 +12,7 @@ function App() {
 
   const fetchRequests = async () => {
     try {
-      const response = await fetch("http://localhost:8000/requests");
-      const data = await response.json();
+      const data = await getRequests();
       setRequests(data);
     } catch (error) {
       console.error("Erro ao buscar requests", error);
@@ -30,7 +23,6 @@ function App() {
     fetchRequests();
 
     const interval = setInterval(fetchRequests, 2000);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -39,23 +31,16 @@ function App() {
   };
 
   const handleSubmitRequest = async (numbers: number[]) => {
-    console.log("Enviando numeros:", numbers)
+    //console.log("Enviando numeros:", numbers)
 
-    await fetch("http://localhost:8000/requests", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(numbers),
-    });
-
-      setIsModalOpen(false);
-      fetchRequests();
+    await createRequest(numbers);
+    setIsModalOpen(false);
+    fetchRequests();
 
   };
 
   return (
-    <div style={{ padding: "2px", height: "100vh" }}>
+    <div style={{ padding: "24px", height: "100vh", overflow: "hidden" }}>
       <h1>Dashboard</h1>
 
       {/* cards */}
@@ -67,6 +52,7 @@ function App() {
           flexDirection: "column",
           gap: "12px",
           overflowY: "auto",
+          overflowX: "hidden",
           maxHeight: "calc(100vh - 120px)",
           paddingRight: "8px",
         }}
